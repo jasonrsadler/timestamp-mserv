@@ -18,6 +18,10 @@ app.get('/api/timestamp/:date_string', function (req, res, next) {
   res.json({unix: date.getTime(), utc: date.toUTCString()})
 })
 
+app.get('/api/timestamp/', function (req, res, next) {
+  res.json({message: 'here'})
+})
+
 var listener = app.listen(process.env.PORT || 3000 , function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
