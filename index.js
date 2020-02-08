@@ -12,6 +12,9 @@ app.get('/api/timestamp/:date_string', function (req, res, next) {
   }
   date = new Date(req.params.date_string)
   if (isNaN(date)) {
+    date = new Date(int.parse(req.params.date_string))
+  }
+  if (isNaN(date)) {
     res.json({error: 'Invaid Date'})
     return
   }
